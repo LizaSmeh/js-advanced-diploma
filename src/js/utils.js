@@ -24,6 +24,33 @@
  * */
 export function calcTileType(index, boardSize) {
   // TODO: ваш код будет тут
+  if (index % boardSize === 0) {
+    if (index < boardSize) {
+      return 'top-left';
+    } if (index === boardSize * (boardSize - 1)) {
+      return 'bottom-left';
+    }
+
+    return 'left';
+  }
+
+  if (index % boardSize === 7) {
+    if (index < boardSize) {
+      return 'top-right';
+    } if (index === boardSize ** 2 - 1) {
+      return 'bottom-right';
+    }
+    return 'right';
+  }
+
+  if (index > 0 && index < boardSize) {
+    return 'top';
+  }
+
+  if (index > boardSize * (boardSize - 1)) {
+    return 'bottom';
+  }
+
   return 'center';
 }
 
