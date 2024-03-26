@@ -1,5 +1,6 @@
-import GamePlay from './GamePlay';
-import themes from './themes';
+import GamePlay from './GamePlay.js';
+import themes from './themes.js';
+import PositionedCharacter from './PositionedCharacter.js';
 
 export default class GameController {
   constructor(gamePlay, stateService) {

@@ -1,9 +1,9 @@
-import Character from '../Character/character.js';
+import Character from '../Character.js';
 
 export default class Daemon extends Character {
-  constructor(name, type = 'Daemon') {
-    super(name, type);
-    this.attack = 25;
-    this.defence = 25;
+  constructor(level, type = 'Daemon') {
+    super(level, type);
+    this.attack = 10;
+    this.defence = 10;
   }
 }
