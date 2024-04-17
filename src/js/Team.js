@@ -14,18 +14,27 @@
 export default class Team {
   // TODO: write your logic here
   constructor() {
-    this.characters = new Set();
+    this.members = new Set();
   }
 
   add(character) {
-    this.characters.add(character);
+    if (this.members.has(character)) {
+      throw new Error(`Персонаж ${character.name} уже в команде`);
+    }
+    this.members.add(character);
   }
 
-  addAll(...characters) {
-    characters.forEach((item) => this.characters.add(item));
+  addAll(...arrCharacter) {
+    arrCharacter.forEach((item) => this.members.add(item));
+  }
+
+  delete(el) {
+    this.members.delete(el);
   }
 
   toArray() {
-    this.characters = Array.from(this.characters);
+    return Array.from(this.members);
   }
+
+  // symbol
 }

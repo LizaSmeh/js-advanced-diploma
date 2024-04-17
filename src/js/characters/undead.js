@@ -1,9 +1,11 @@
 import Character from '../Character.js';
 
 export default class Undead extends Character {
-  constructor(level, type = 'Undead') {
-    super(level, type);
+  constructor(level) {
+    super(level, 'Undead');
     this.attack = 40;
     this.defence = 10;
+    this.distance = 4;
+    this.attackRange = 1;
   }
 }

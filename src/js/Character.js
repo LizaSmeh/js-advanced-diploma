@@ -21,8 +21,21 @@ export default class Character {
     this.type = type;
 
     if (new.target.name === 'Character') {
-      throw new Error('Базовый класс, нельзя использовать для создания персонажаю');
+      throw new Error('Базовый класс, нельзя использовать для создания персонажа.');
     }
     // TODO: выбросите исключение, если кто-то использует "new Character()"
+  }
+
+  levelUp() {
+    const healthBefore = this.health;
+    this.level += 1;
+    this.health += 80;
+
+    if (this.health > 100) {
+      this.health = 100;
+    }
+
+    this.attack = Math.max(this.attack, this.attack * ((1.8 - healthBefore) / 100));
+    this.defence = Math.max(this.defence, this.defence * ((1.8 - healthBefore) / 100));
   }
 }
