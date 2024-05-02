@@ -36,5 +36,10 @@ export default class Team {
     return Array.from(this.members);
   }
 
-  // symbol
+  * [Symbol.iterator]() {
+    const list = Array.from(this.members);
+    for (const item of list) {
+      yield item;
+    }
+  }
 }
